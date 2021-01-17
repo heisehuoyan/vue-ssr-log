@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client:dev": "webpack serve"
+    "client:dev": "webpack serve --config scripts/webpack.client.js",
+    "client:build": "webpack --config scripts/webpack.client.js --watch",
+    "sever:build": "webpack --config scripts/webpack.sever.js --watch",
+    "run:all": "concurrently \"npm run client:build\" \"npm run sever:build\""
   },
   "keywords": [],
   "author": "",
@@ -13,10 +16,12 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "babel-loader": "^8.2.2",
+    "concurrently": "^5.3.0",
     "css-loader": "^5.0.1",
     "html-webpack-plugin": "^4.5.1",
     "koa": "^2.13.1",
     "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
     "vue": "^2.6.12",
     "vue-loader": "^15.9.6",
     "vue-server-renderer": "^2.6.12",

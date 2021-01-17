@@ -7,13 +7,14 @@
 // vue-style-loader css-loader 解析css样式并插入到style标签中，vue-style-loader支持服务端渲染
 
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin"); //将打包后的js文件插到html中
+// const HtmlWebpackPlugin = require("html-webpack-plugin"); //将打包后的js文件插到html中
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 module.exports = {
   mode: "development",
   entry: path.resolve(__dirname, "src/main.js"),
   output: {
     filename: "[name].bundle.js", // 默认是main.js,默认是dist目录
+    path: path.resolve(__dirname, "../dist"),
   },
   module: {
     rules: [
@@ -46,10 +47,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public/index.html"),
-      // html默认的名字是index.html
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: path.resolve(__dirname, "../public/index.html"),
+    //   // html默认的名字是index.html
+    // }),
     new VueLoaderPlugin(),
   ],
 };
