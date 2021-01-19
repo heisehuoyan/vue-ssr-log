@@ -6,7 +6,7 @@ export default () => {
   const app = new Vue({
     render: (h) => h(App), // h用来渲染组件 createElment _c
   });
-  return app;
+  return { app };
 };
 
 // new Vue({

@@ -7,9 +7,9 @@
   <title>Document</title>
 </head>
 <body>
-  <div>
     <!-- 渲染服务端生成的字符串 -->
-    <!--vue-ssr-output-->
-  </div>
+    <!--vue-ssr-outlet-->
+<!-- esj摸板 引入客户点打包后的代码，给页面增加功能 -->
+  <script src="<%=htmlWebpackPlugin.options.client%>"> </script>
 </body>
 </html>

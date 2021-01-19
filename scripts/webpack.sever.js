@@ -15,6 +15,7 @@ module.exports = merge(base, {
       filename: "sever.html",
       excludeChunks: ["sever"], //html内不需要引入打包后的js
       minify: false, // 不需要压缩，提示 <!--vue-ssr-output-->不是注释
+      client: "/client.bundle.js", // 模块引入客户端打包后代码
     }),
   ],
 });
